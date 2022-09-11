@@ -17,6 +17,6 @@ const Activity = mongoose.Schema({
 		default: false,
 	}
 
-}, { collection: 'activity' });
+}, { collection: `${process.env.DB_COLLECTION}` });
 
 export default mongoose.model('Activity', Activity);
