@@ -1,5 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose' 
+import dotenv from 'dotenv';
 
+dotenv.config();
 const Activity = mongoose.Schema({
 
 	title: {
