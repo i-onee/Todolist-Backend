@@ -12,7 +12,7 @@ const config = {
 	port		: process.env.PORT
 };
 
-mongoose.connect(`${config.atlas || config.compass}/${config.dbase}`, {
+mongoose.connect(`${config.atlas || config.compass}`, {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
 });
