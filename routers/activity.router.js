@@ -13,7 +13,7 @@ const router = express.Router();
 router.delete('/activity/:id', deleteActivity);
 router.patch('/activity/:id', updateOneActivity);
 router.get('/activity/:id', getActivityByID);
-router.put('/activity', updateManyActivity);
+router.put('/activity/:id', updateManyActivity);
 router.post('/activity', createActivity);
 router.get('/activity', getActivity);
 
