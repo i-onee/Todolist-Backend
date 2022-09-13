@@ -28,7 +28,7 @@ const createActivity = async (req, res) => {
 	};
 };
 
-const updateActivity = async (req, res) => {
+const updateOneActivity = async (req, res) => {
 	try {
 		const activity = await Activty.updateOne({ _id: req.params.id }, { $set: req.body });
 		res.status(200).json(activity);
@@ -36,6 +36,15 @@ const updateActivity = async (req, res) => {
 		res.status(400).json({ message: error.message }); 
 	};
 };
+
+const updateManyActivity = async (req, res) => {
+	try {
+		const activity = await Activty.updateMany({}, { $set: req.body })
+		res.status(200).json(activity);
+	} catch (error) {
+		res.status(400).json({ message: error.message }); 
+	}
+}
 
 const deleteActivity = async (req, res) => {
 	try {
@@ -46,4 +55,4 @@ const deleteActivity = async (req, res) => {
 	};
 };
 
-export { getActivity, getActivityByID, createActivity, updateActivity, deleteActivity }; 
+export { getActivity, getActivityByID, createActivity, updateOneActivity, updateManyActivity, deleteActivity }; 
