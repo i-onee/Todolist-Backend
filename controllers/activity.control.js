@@ -37,6 +37,16 @@ const updateOneActivity = async (req, res) => {
 	};
 };
 
+const updateManyActivity = async (req, res) => {
+	const datas = req.body
+	try {
+		const activity = await Activty.updateMany({ _id: { $in: datas.ids } }, { $set: datas.updates });
+		res.status(200).json(activity);
+	} catch (error) {
+		res.status(400).json({ message: error.message }); 
+	}
+}
+
 const deleteActivity = async (req, res) => {
 	try {
 		const activity = await Activty.deleteOne({ _id: req.params.id });
@@ -46,4 +56,4 @@ const deleteActivity = async (req, res) => {
 	};
 };
 
-export { getActivity, getActivityByID, createActivity, updateOneActivity, deleteActivity }; 
+export { getActivity, getActivityByID, createActivity, updateOneActivity, updateManyActivity, deleteActivity }; 
