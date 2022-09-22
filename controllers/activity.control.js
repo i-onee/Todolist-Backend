@@ -38,9 +38,9 @@ const updateOneActivity = async (req, res) => {
 };
 
 const updateManyActivity = async (req, res) => {
-	const datas = req.body
+	const data = req.body
 	try {
-		const activity = await Activty.updateMany({ _id: { $in: datas.ids } }, { $set: datas.updates });
+		const activity = await Activty.updateMany({ _id: { $in: data.id } }, { $set: data.updates });
 		res.status(200).json(activity);
 	} catch (error) {
 		res.status(400).json({ message: error.message }); 
