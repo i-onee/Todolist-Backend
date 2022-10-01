@@ -6,11 +6,13 @@ const Activity = mongoose.Schema({
 
 	title: {
 		type: String,
+		default: '...',
 		require: true,
 	},
 
 	notes: {
 		type: String,
+		default: '...',
 		require: true,
 	},
 
