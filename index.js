@@ -12,6 +12,7 @@ const config = {
 	port		: process.env.PORT
 };
 
+mongoose.set('strictQuery', true)
 mongoose.connect(`${config.atlas || config.compass}`, {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
